@@ -4,7 +4,11 @@ Repositório de desenvolvimento do site Buscapet!
 
 Sintaxe
 
-*A definir*
+Main
+Hotfix
+Homolog
+Feature1,2,3...
+Develop
 
 ATENÇÃO!!!!
 
