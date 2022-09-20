@@ -12,4 +12,4 @@ Develop
 
 ATENÇÃO!!!!
 
-Para fazer alterações à branch main, favor contatar o Project Manager
+Para fazer alterações à branch main, favor contatar o Project Manager (Enzo)
