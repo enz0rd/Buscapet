@@ -1,0 +1,1 @@
+Efetuei um commit com o nosso ambiente de Homologação (Homolog) e com o nosso Style, dentro das pasta foi feito uma parte da interface do sistema.
