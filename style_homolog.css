@@ -162,6 +162,20 @@ nav {
   text-decoration: none;
 }
 
+.btn-terciaria {
+  padding: 10px 20px;
+  width: 100px;
+  height: 5vh;
+  color: #fff;
+  background: #0bee1e;
+  border: 1px solid #35df17;
+  border-radius: 50px;
+  user-select: none;
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: none;
+}
+
 /*showcase*/
 
 .showcase-container {
