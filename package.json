@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "bootstrap": "^5.2.2"
+    "bootstrap": "^5.2.2",
+    "mysql": "^2.18.1"
   },
   "name": "buscapet",
   "description": "Bem vindo!",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
