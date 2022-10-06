@@ -1,13 +1,8 @@
-let sql = require('mysql')
+(async () =>{
+    const db = require("./db.js");
+    console.log("Foi!");
 
-let con = sql.createConnection({
-    host: "localhost",
-    user: "devbuscapet",
-    password: "devbuscapet"
-})
-
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!")
-})
-
+    console.log("SELECT * FROM empresas");
+    const empresas = await db.selectEmpresas();
+    console.log(empresas);
+})()
