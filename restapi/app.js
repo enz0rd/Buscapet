@@ -1,6 +1,7 @@
 const mysql = require('mysql2')
 const express = require('express')
 const app = express()
+const port = 3000
 
 const con = mysql.createConnection({
     host: "localhost",
@@ -9,21 +10,26 @@ const con = mysql.createConnection({
     database: "bdbuscapet"
 })
 
+app.use(express.json())
+
 con.connect(function(err) {
     if(err) throw err;
     console.log("connected!")
 })
 
-const selectEmpresas = con.query('SELECT * FROM empresas', (err, rows) => {
+selectEmpresas = () => con.query('SELECT * FROM empresas', (err, rows, fields) => {
     if (err) throw err
-
-    console.log('Empresas:', rows, '\n\n')
 })
 
-// con.end((err) => {
-//     if(err) {
-//         console.log('error to finish connection', err)
-//         return
-//     }
-//     console.log('the connection was finished')
-// })
+
+app.listen(port, () => {
+    console.log(`App running on port ${port}`)
+})
+
+app.get('/', (req, res) => {
+    res.send('hello world')
+})
+
+app.get('/empresas', (req, res) => {
+    res.send()
+})

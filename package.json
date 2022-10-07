@@ -12,7 +12,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./restapi/main.js"
+    "start": "nodemon ./restapi/app.js"
   },
   "repository": {
     "type": "git",
