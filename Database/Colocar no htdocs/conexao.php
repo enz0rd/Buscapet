@@ -2,7 +2,7 @@
     $servidor = "localhost";
     $user = "devbuscapet";
     $password = "devbuscapet";
-    $dbname = "bdbuscapet";
+    $dbname = "bsbuscapet";
 
     $conn = mysqli_connect($servidor, $user, $password, $dbname);
     if(!$conn) {

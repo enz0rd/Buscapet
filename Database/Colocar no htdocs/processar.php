@@ -1,29 +1,29 @@
 <?php
     include_once('conexao.php');
-    $nome = $_POST['nome'];
-    $tipo = $_POST['tipo'];
-    $endereco = $_POST['endereco'];
-    $ctt = $_POST['contato'];
-    $desc = $_POST['desc'];
-    $nome_imagem = $_FILES['logo']['name'];
-    echo "Nome da empresa: $nome <br>";
-    echo "Tipo: $tipo <br>";
-    echo "Endereço: $endereco <br>";
-    echo "Contato: $ctt <br>";
-    echo "Descrição: $desc <br>";
-    echo "Logo da empresa: $nome_imagem <br>";
+    $empresa = $_POST['nome_empresa'];
+    $tipo_empresa = $_POST['tipo_empresa'];
+    $endereco_empresa = $_POST['endereco_empresa'];
+    $ctt_empresa = $_POST['contato_empresa'];
+    $desc_empresa = $_POST['desc_empresa'];
+    $empresa_imagem = $_FILES['logo_empresa']['name'];
+    echo "Nome da empresa: $empresa <br>";
+    echo "Tipo: $tipo_empresa <br>";
+    echo "Endereço: $endereco_empresa <br>";
+    echo "Contato: $ctt_empresa <br>";
+    echo "Descrição: $desc_empresa <br>";
+    echo "Logo da empresa: $empresa_imagem <br>";
 
     //salvar no bd
 
-    $result_empresa = "INSERT INTO empresas (logoempresa, ds_empresa, tipo_Empresa, desc_empresa, contato_empresa, endereco_empresa) VALUES ('$nome_imagem', '$nome', '$tipo', '$desc', '$ctt', '$endereco')";
+    $result_empresa = "INSERT INTO empresas (logoempresa, ds_empresa, tipo_Empresa, desc_empresa, contato_empresa, endereco_empresa) VALUES ('$empresa_imagem', '$empresa', '$tipo_empresa', '$desc_empresa', '$ctt_empresa', '$endereco_empresa')";
     
-    $empresa = mysqli_query($conn, $result_empresa);
+    $cadastro = mysqli_query($conn, $result_empresa);
     $ultimo_id = mysqli_insert_id($conn);
     echo "Último id inserido: $ultimo_id <br>";
 
     //pasta que salva as imagens
 
-    $_UP['pasta'] = 'imagens/empresas/'.$nome.'/';
+    $_UP['pasta'] = 'imagens/empresas/'.$empresa.'/';
 
     //criar pasta que salva
 
@@ -31,8 +31,7 @@
 
     //verificar se é possível mover o arquivo para a pasta
 
-    if(move_uploaded_file($_FILES['logo']['tmp_name'], $_UP['pasta'].$nome_imagem)) {
+    if(move_uploaded_file($_FILES['logo_empresa']['tmp_name'], $_UP['pasta'].$empresa_imagem)) {
         echo "Imagem salva com sucesso <br>";
     }
-
 ?>

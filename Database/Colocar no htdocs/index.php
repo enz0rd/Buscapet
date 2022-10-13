@@ -9,9 +9,9 @@
     }
 
     .btn {
-        padding: 5px;
-        border: 1px #fff;
-        border-radius: 5px;
+        padding: 10px;
+        border: solid 2px #707070;
+        border-radius: 10px;
         transition: 0.3s;
     }
 
@@ -59,34 +59,34 @@
 
 <head>
     <title>Teste de Cadastro</title>
+    <script src="main.js"></script>
 </head>
 
 <body>
-
-<div class="container">
-    <h1 class="title">Cadastrar empresa</h1>
-
-    <form class="form" method="POST" action="processar.php" enctype="multipart/form-data">
-        <label class="label">Nome:</label>
-        <input type="text" name="nome">
-
-        <label class="label">Tipo:</label>
-        <input type="text" name="tipo">
-
-        <label class="label">Endereço:</label>
-        <input type="text" name="endereco">
-
-        <label class="label">Contato:</label>
-        <input type="text" name="contato">
-
-        <label class="label">Descrição:</label>
-        <input type="text" name="desc">
-
-        <label class="label">Logo:</label>
-        <input type="file" name="logo">
-
-        <input class="btn" type="submit" value="Cadastrar">
-    </form>
-</div>
-
+    <div class="container">
+        <h1 class="title">Cadastrar empresa</h1>
+    
+        <form class="form" method="POST" action="processar.php" enctype="multipart/form-data">
+            <label class="label">Nome:</label>
+            <input type="text" name="nome_empresa">
+    
+            <label class="label">Tipo:</label>
+            <input type="text" name="tipo_empresa">
+    
+            <label class="label">Endereço:</label>
+            <input type="text" name="endereco_empresa">
+    
+            <label class="label">Contato:</label>
+            <input type="text" name="contato_empresa">
+    
+            <label class="label">Descrição:</label>
+            <input type="text" name="desc_empresa">
+    
+            <label class="label">Logo:</label>
+            <input type="file" name="logo_empresa">
+    
+            <input class="btn" type="submit" value="Cadastrar">
+        </form>
+    </div>
+    
 </body>
