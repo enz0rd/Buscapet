@@ -23,6 +23,19 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+CREATE TABLE `categorias_empresas` (
+  `idcategoria` int(100) NOT NULL,
+  `ds_categoria` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `categorias_prodser` (
+	`idcategoria` int(100) NOT NULL,
+	`ds_categoria` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
+
 --
 -- Estrutura da tabela `empresas`
 --
@@ -31,9 +44,9 @@ CREATE TABLE `empresas` (
   `idempresa` int(100) NOT NULL,
   `logoempresa` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `ds_empresa` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `tipo_Empresa` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `desc_empresa` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `contato_empresa` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
+  `idcategoria` int(100) NOT NULL,
   `endereco_empresa` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -50,7 +63,7 @@ CREATE TABLE `produtos` (
   `valor_produto` decimal(60,0) NOT NULL,
   `qtd_produto` int(100) NOT NULL,
   `desc_produto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `cat_produto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `idcategoria` int(100) NOT NULL,
   `idempresa` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -66,7 +79,7 @@ CREATE TABLE `servicos` (
   `ds_servico` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `valor_servico` decimal(10,0) NOT NULL,
   `desc_servico` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `cat_servico` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `idcategoria` int(100) NOT NULL,
   `idempresa` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -75,10 +88,26 @@ CREATE TABLE `servicos` (
 --
 
 --
+-- Índices para tabela `categorias`
+--
+ALTER TABLE `categorias_prodser`
+  ADD PRIMARY KEY (`idcategoria`),
+  ADD UNIQUE KEY `ds_categoria` (`ds_categoria`);
+
+
+--
+-- Índices para tabela `categorias_empresas`
+--
+ALTER TABLE `categorias_empresas`
+  ADD PRIMARY KEY (`idcategoria`),
+  ADD UNIQUE KEY `ds_categoria` (`ds_categoria`);
+
+--
 -- Índices para tabela `empresas`
 --
 ALTER TABLE `empresas`
   ADD PRIMARY KEY (`idempresa`),
+  ADD KEY `idcategoria` (`idcategoria`),
   ADD UNIQUE KEY `ds_empresa` (`ds_empresa`,`contato_empresa`,`endereco_empresa`);
 
 --
@@ -86,15 +115,16 @@ ALTER TABLE `empresas`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`idproduto`),
-  ADD KEY `idempresa` (`idempresa`);
+  ADD KEY `idempresa` (`idempresa`),
+  ADD KEY `idcategoria` (`idcategoria`);
 
 --
 -- Índices para tabela `servicos`
 --
 ALTER TABLE `servicos`
   ADD PRIMARY KEY (`idservico`),
-  ADD KEY `idempresa` (`idempresa`);
-
+  ADD KEY `idempresa` (`idempresa`),
+  ADD KEY `idcategoria` (`idcategoria`);
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
@@ -122,16 +152,24 @@ ALTER TABLE `servicos`
 --
 
 --
+-- Limitadores para a tabela `empresas`
+--
+ALTER TABLE `empresas`
+  ADD CONSTRAINT `empresas_ibfk_1` FOREIGN KEY (`idcategoria`) REFERENCES `categorias_empresas` (`idcategoria`);
+
+--
 -- Limitadores para a tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresas` (`idempresa`);
+  ADD CONSTRAINT `produtos_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresas` (`idempresa`),
+  ADD CONSTRAINT `produtos_ibfk_2` FOREIGN KEY (`idcategoria`) REFERENCES `categorias_prodser` (`idcategoria`);
 
 --
 -- Limitadores para a tabela `servicos`
 --
 ALTER TABLE `servicos`
-  ADD CONSTRAINT `servicos_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresas` (`idempresa`);
+  ADD CONSTRAINT `servicos_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresas` (`idempresa`),
+  ADD CONSTRAINT `servicos_ibfk_2` FOREIGN KEY (`idcategoria`) REFERENCES `categorias_prodser` (`idcategoria`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
