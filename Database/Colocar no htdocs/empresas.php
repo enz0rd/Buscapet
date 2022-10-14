@@ -1,7 +1,7 @@
 <?php
     include_once('conexao.php');
     $empresa = $_POST['nome_empresa'];
-    $tipo_empresa = $_POST['tipo_empresa'];
+    $tipo_empresa = $_POST['tipo'];
     $endereco_empresa = $_POST['endereco_empresa'];
     $ctt_empresa = $_POST['contato_empresa'];
     $desc_empresa = $_POST['desc_empresa'];
@@ -15,7 +15,7 @@
 
     //salvar no bd
 
-    $result_empresa = "INSERT INTO empresas (logoempresa, ds_empresa, tipo_Empresa, desc_empresa, contato_empresa, endereco_empresa) VALUES ('$empresa_imagem', '$empresa', '$tipo_empresa', '$desc_empresa', '$ctt_empresa', '$endereco_empresa')";
+    $result_empresa = "INSERT INTO empresas (logoempresa, ds_empresa, idcategoria, desc_empresa, contato_empresa, endereco_empresa) VALUES ('$empresa_imagem', '$empresa', '$tipo_empresa', '$desc_empresa', '$ctt_empresa', '$endereco_empresa')";
     
     $cadastro = mysqli_query($conn, $result_empresa);
     $ultimo_id = mysqli_insert_id($conn);

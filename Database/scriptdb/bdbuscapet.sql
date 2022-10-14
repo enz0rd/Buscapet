@@ -130,10 +130,22 @@ ALTER TABLE `servicos`
 --
 
 --
+-- AUTO_INCREMENT de tabela `categorias_empresas`
+--
+ALTER TABLE `categorias_empresas`
+  MODIFY `idcategoria` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `categorias_prodser`
+--
+ALTER TABLE `categorias_prodser`
+  MODIFY `idcategoria` int(100) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `empresas`
 --
 ALTER TABLE `empresas`
-  MODIFY `idempresa` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idempresa` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
