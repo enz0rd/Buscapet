@@ -1,5 +1,5 @@
 <?php
-    include_once('conexao.php');
+    include_once('../conexao.php');
     $categoria = $_POST['nome_categoria'];
     $tipo = $_POST['tipo'];
 
@@ -23,4 +23,3 @@
     }
     header("Location: http://localhost/teste/index.php");
     exit();
-?>

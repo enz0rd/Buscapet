@@ -60,7 +60,7 @@ CREATE TABLE `produtos` (
   `idproduto` int(100) NOT NULL,
   `img_produto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `ds_produto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `valor_produto` decimal(60,0) NOT NULL,
+  `valor_produto` decimal(10,2) NOT NULL,
   `qtd_produto` int(100) NOT NULL,
   `desc_produto` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `idcategoria` int(100) NOT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE `servicos` (
   `idservico` int(100) NOT NULL,
   `img_servico` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `ds_servico` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `valor_servico` decimal(10,0) NOT NULL,
+  `valor_servico` decimal(10,2) NOT NULL,
   `desc_servico` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `idcategoria` int(100) NOT NULL,
   `idempresa` int(100) NOT NULL

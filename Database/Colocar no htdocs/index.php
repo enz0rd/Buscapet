@@ -65,7 +65,6 @@
         flex-direction: row;
         justify-content: space-around;
     }
-
 </style>
 
 <head>
@@ -76,8 +75,8 @@
 <body>
     <div class="container">
         <h1 class="title">Cadastrar Categoria</h1>
-    
-        <form class="form" method="POST" action="categoria.php" enctype="multipart/form-data">
+
+        <form class="form" method="POST" action="./src/categoria.php" enctype="multipart/form-data">
             <label class="label">Categoria:</label>
             <input type="text" name="nome_categoria">
             <label class="label">Tipo:</label>
@@ -95,92 +94,137 @@
 
     <div class="container">
         <h1 class="title">Cadastrar empresa</h1>
-    
-        <form class="form" method="POST" action="empresas.php" enctype="multipart/form-data">
+
+        <form class="form" method="POST" action="./src/empresas.php" enctype="multipart/form-data">
             <label class="label">Nome:</label>
             <input type="text" name="nome_empresa">
-    
+
             <label class="label">Tipo:</label>
             <select id="tipo" name="tipo">
                 <option value="Nenhuma">Selecione uma opção</option>
                 <?php
-                    include_once('conexao.php');
-                    $selecttype = "SELECT * FROM categorias_empresas ORDER BY ds_categoria";
-                    $result_type = mysqli_query($conn, $selecttype);
-                    while($tipo = mysqli_fetch_array($result_type)){
+                include_once('conexao.php');
+                $selecttype = "SELECT * FROM categorias_empresas ORDER BY ds_categoria";
+                $result_type = mysqli_query($conn, $selecttype);
+                while ($tipo = mysqli_fetch_array($result_type)) {
                 ?>
-                <option value="<?php echo $tipo['idcategoria'] ?>"><?php echo $tipo['ds_categoria'] ?></option>
-                <?php } ?> 
+                    <option value="<?php echo $tipo['idcategoria'] ?>"><?php echo $tipo['ds_categoria'] ?></option>
+                <?php } ?>
             </select>
-    
+
             <label class="label">Endereço:</label>
             <input type="text" name="endereco_empresa">
-    
+
             <label class="label">Contato:</label>
             <input type="text" name="contato_empresa" maxlength="12">
-    
+
             <label class="label">Descrição:</label>
             <input type="text" name="desc_empresa" maxlength="100">
-    
+
             <label class="label">Logo:</label>
             <input type="file" name="logo_empresa">
-    
+
             <input class="btn" type="submit" value="Cadastrar">
         </form>
     </div>
 
     <br><br>
 
-//desenvolver
-//criar produto.php
-
     <div class="container">
         <h1 class="title">Cadastrar Produto</h1>
-        
-        <form class="form" method="POST" action="produto.php" enctype="multipart/form-data">
+
+        <form class="form" method="POST" action="./src/produto.php" enctype="multipart/form-data">
             <label class="label">Nome:</label>
             <input type="text" name="nome_produto">
-    
+
             <label class="label">Empresa:</label>
             <select id="empresa" name="empresa">
                 <option value="Nenhuma">Selecione uma opção</option>
                 <?php
-                    include_once('conexao.php');
-                    $selecttype = "SELECT idempresa, ds_empresa FROM empresas ORDER BY ds_empresa";
-                    $result_type = mysqli_query($conn, $selecttype);
-                    while($tipo = mysqli_fetch_array($result_type)){
+                include_once('conexao.php');
+                $selecttype = "SELECT idempresa, ds_empresa FROM empresas ORDER BY ds_empresa";
+                $result_type = mysqli_query($conn, $selecttype);
+                while ($tipo = mysqli_fetch_array($result_type)) {
                 ?>
-                <option value="<?php echo $tipo['idempresa'] ?>"><?php echo $tipo['ds_empresa'] ?></option>
-                <?php } ?> 
+                    <option value="<?php echo $tipo['idempresa'] ?>"><?php echo $tipo['ds_empresa'] ?></option>
+                <?php } ?>
             </select>
 
             <label class="label">Tipo:</label>
             <select id="tipo" name="tipo">
                 <option value="Nenhuma">Selecione uma opção</option>
                 <?php
-                    include_once('conexao.php');
-                    $selecttype = "SELECT * FROM categorias_prodser ORDER BY ds_categoria";
-                    $result_type = mysqli_query($conn, $selecttype);
-                    while($tipo = mysqli_fetch_array($result_type)){
+                include_once('conexao.php');
+                $selecttype = "SELECT * FROM categorias_prodser ORDER BY ds_categoria";
+                $result_type = mysqli_query($conn, $selecttype);
+                while ($tipo = mysqli_fetch_array($result_type)) {
                 ?>
-                <option value="<?php echo $tipo['idcategoria'] ?>"><?php echo $tipo['ds_categoria'] ?></option>
-                <?php } ?> 
+                    <option value="<?php echo $tipo['idcategoria'] ?>"><?php echo $tipo['ds_categoria'] ?></option>
+                <?php } ?>
             </select>
-     
+
             <label class="label">Valor:</label>
-            <input type="text" name="valor_produto">
-    
+            <input type="number" min="0" placeholder="0.00" name="valor_produto" step="0.01" pattern="^\d+(?:\.\d{1,2})?$">
+
             <label class="label">Quantidade:</label>
-            <input type="text" name="qtd_produto">
-    
+            <input type="number" min="0" name="qtd_produto" step="any">
+
             <label class="label">Descrição:</label>
             <input type="text" name="desc_produto" maxlength="100">
-    
+
             <label class="label">Imagem:</label>
             <input type="file" name="img_produto">
-    
+
             <input class="btn" type="submit" value="Cadastrar">
         </form>
     </div>
-    
+
+    <br><br>
+
+    <div class="container">
+        <h1 class="title">Cadastrar Serviço</h1>
+
+        <form class="form" method="POST" action="./src/servicos.php" enctype="multipart/form-data">
+            <label class="label">Nome:</label>
+            <input type="text" name="nome_servico">
+
+            <label class="label">Empresa:</label>
+            <select id="empresa" name="empresa">
+                <option value="Nenhuma">Selecione uma opção</option>
+                <?php
+                include_once('conexao.php');
+                $selecttype = "SELECT idempresa, ds_empresa FROM empresas ORDER BY ds_empresa";
+                $result_type = mysqli_query($conn, $selecttype);
+                while ($tipo = mysqli_fetch_array($result_type)) {
+                ?>
+                    <option value="<?php echo $tipo['idempresa'] ?>"><?php echo $tipo['ds_empresa'] ?></option>
+                <?php } ?>
+            </select>
+
+            <label class="label">Tipo:</label>
+            <select id="tipo" name="tipo">
+                <option value="Nenhuma">Selecione uma opção</option>
+                <?php
+                include_once('conexao.php');
+                $selecttype = "SELECT * FROM categorias_prodser ORDER BY ds_categoria";
+                $result_type = mysqli_query($conn, $selecttype);
+                while ($tipo = mysqli_fetch_array($result_type)) {
+                ?>
+                    <option value="<?php echo $tipo['idcategoria'] ?>"><?php echo $tipo['ds_categoria'] ?></option>
+                <?php } ?>
+            </select>
+
+            <label class="label">Valor:</label>
+            <input type="number" min="0" placeholder="0.00" name="valor_servico" step="0.01" pattern="^\d+(?:\.\d{1,2})?$">
+
+            <label class="label">Descrição:</label>
+            <input type="text" name="desc_servico" maxlength="100">
+
+            <label class="label">Imagem:</label>
+            <input type="file" name="img_servico">
+
+            <input class="btn" type="submit" value="Cadastrar">
+        </form>
+    </div>
+
 </body>
