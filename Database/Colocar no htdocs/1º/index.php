@@ -105,6 +105,53 @@
         padding: 0.5rem;
     }
 
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        border-bottom: 2px solid white;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .nav-item {
+        background-color: transparent;
+        border: 2px solid white;
+        padding: 10px;
+        border-radius: 5px;
+        font-family: Verdana;
+        font-size: 15px;
+        color: white;
+    }
+
+    .quadrado {
+        background-color: white;
+        border-radius: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .active {
+        background-color: white;
+        color: transparent;
+    }
+
+    .nav-link {
+        color: white;
+        text-decoration: none;
+    }
+    .nav-link.active {
+        color: #42801f;
+        text-decoration: none;
+    }
+
 </style>
 
 <head>
@@ -113,6 +160,17 @@
 </head>
 
 <body>
+
+    <header class="header">
+        <div class="quadrado"></div>
+        <nav class="nav">
+            <ul class="nav-item active"><a class="nav-link active">Selects</a></ul>
+            <ul class="nav-item"><a class="nav-link" href="./#">Inserts</a></ul>
+            <ul class="nav-item"><a class="nav-link" href="./#">Updates</a></ul>
+            <ul class="nav-item"><a class="nav-link" href="./#">Deletes</a></ul>
+        </nav>
+    </header>
+
     <div class="insert">
         <div class="container">
             <h1 class="title">Cadastrar Categoria</h1>
@@ -137,6 +195,7 @@
             <h1 class="title">Cadastrar empresa</h1>
 
             <form class="form" method="POST" action="./src/empresas.php" enctype="multipart/form-data">
+
                 <label class="label">Nome:</label>
                 <input type="text" name="nome_empresa">
 
