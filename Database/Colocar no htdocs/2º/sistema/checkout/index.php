@@ -67,6 +67,10 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      .desc {
+        word-break: break-all;
+      }
     </style>
 
     
@@ -92,37 +96,37 @@
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Nome:</h6>
-              <small class="text-muted">Teste</small>
+              <small class="text-muted" id="output_name">Nome da Empresa</small>
             </div>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
-              <h6 class="my-0">Tipo:</h6>
-              <small class="text-muted">Teste</small>
+              <h6 class="my-0">Categoria:</h6>
+              <small class="text-muted" id="output_type">Categoria da Empresa</small>
             </div>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Contato</h6>
-              <small class="text-muted">Teste</small>
+              <small class="text-muted" id="output_ctt">Contato da Empresa</small>
             </div>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Endereço</h6>
-              <small class="text-muted">Teste</small>
+              <small class="text-muted" id="output_address">Endereço da Empresa</small>
             </div>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Descrição:</h6>
-              <small class="text-muted">Teste</small>
+              <small class="text-muted desc" id="output_desc">Descrição da Empresa</small>
             </div>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Imagem:</h6>
-              <img style="border-radius: 30px; padding: 10px;" id="output" width="200" />
+              <img style="border-radius: 30px; padding: 10px;" id="output_logo" width="200" />
             </div>
           </li>
         </ul>
@@ -133,7 +137,7 @@
           <div class="row g-3">
             <div class="col-12">
               <label for="firstName" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="ds_nome" placeholder="Nome da Empresa" value="" required>
+              <input type="text" oninput="loadname()" class="form-control" id="ds_nome" placeholder="Nome da Empresa" value="" required>
               <div class="invalid-feedback">
                 O nome deve ser preenchido!
               </div>
@@ -141,7 +145,7 @@
             <div class="col-6">
               <label for="username" class="form-label">Categoria</label>
               <div class="input-group has-validation">
-                <select class="form-select" id="tipo" name="tipo" required>
+                <select onchange="loadtype()" class="form-select" id="tipo" name="tipo" required>
                   <option value="Nenhuma">Selecione uma opção</option>
                   <?php
                       include_once('../conecta.php');
@@ -160,7 +164,7 @@
 
             <div class="col-6">
               <label for="email" class="form-label">Contato</label>
-              <input type="text" class="form-control" id="contato_empresa" placeholder="49999999999" maxlength="11" required>
+              <input type="text" oninput="loadctt()" class="form-control" id="contato_empresa" placeholder="49999999999" maxlength="11" required>
               <div class="invalid-feedback">
                 Digite um número válido!
               </div>
@@ -168,7 +172,15 @@
 
             <div class="col-12">
               <label for="address" class="form-label">Endereço</label>
-              <input type="text" class="form-control" id="address" placeholder="Avenida São Jorge, 123" required>
+              <input type="text" oninput="loadaddress()" class="form-control" id="address" placeholder="Avenida São Jorge, 123" required>
+              <div class="invalid-feedback">
+                Preencha o endereço da empresa
+              </div>
+            </div>
+            
+            <div class="col-12">
+              <label for="address" class="form-label">Descrição</label>
+              <input type="text" oninput="loaddesc()" class="form-control" id="desc" placeholder="Descrição da sua Empresa" maxlength="100" required>
               <div class="invalid-feedback">
                 Preencha o endereço da empresa
               </div>
@@ -176,7 +188,7 @@
 
             <div class="col-12">
               <label for="address" class="form-label">Logo</label>
-              <input type="file" accept="image/png, image/jpeg" name="logo" onchange="loadFile(event)" class="form-control" required>
+              <input type="file" accept="image/png, image/jpeg" name="logo" onchange="loadlogo(event)" class="form-control" required>
               <div class="invalid-feedback">
                 Insira uma Logo válida
               </div>
@@ -203,9 +215,29 @@
       <script src="form-validation.js"></script>
   </body>
   <script>
-      var loadFile = function(event) {
-        var image = document.getElementById('output');
+      var loadlogo = function(event) {
+        var image = document.getElementById('output_logo');
         image.src = URL.createObjectURL(event.target.files[0]);
+      };
+      var loadname = function(event) {
+        var name = document.getElementById('ds_nome').value;
+        document.getElementById('output_name').innerHTML = name;
+      };
+      var loadtype = function(event) {
+        var type = document.getElementById('tipo').value;
+        document.getElementById('output_type').innerHTML = type;
+      };
+      var loadctt = function(event) {
+        var ctt = document.getElementById('contato_empresa').value;
+        document.getElementById('output_ctt').innerHTML = ctt;
+      };
+      var loaddesc = function(event) {
+        var desc = document.getElementById('desc').value;
+        document.getElementById('output_desc').innerHTML = desc;
+      };
+      var loadaddress = function(event) {
+        var address = document.getElementById('address').value;
+        document.getElementById('output_address').innerHTML = address;
       };
 </script>
 
