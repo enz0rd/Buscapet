@@ -23,4 +23,8 @@ mkdir($_UP['pasta'], 0777);
 
 if (move_uploaded_file($_FILES['img_servico']['tmp_name'], $_UP['pasta'] . $img)) {
     echo "Imagem salva com sucesso <br>";
+} else {
+    echo "Erro";
 }
+
+echo "Voltar à <a href='../index.php'>Página Inicial</a>";

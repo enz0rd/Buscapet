@@ -38,3 +38,5 @@ mkdir($_UP['pasta_servicos'], 0777);
 if (move_uploaded_file($_FILES['logo_empresa']['tmp_name'], $_UP['pasta'] . $empresa_imagem)) {
     echo "Imagem salva com sucesso <br>";
 }
+
+echo "Voltar à <a href='../index.php'>Página Inicial</a>";
