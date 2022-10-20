@@ -1,3 +1,2 @@
 <?php
-    $conexao = mysqli_connect('localhost', 'devbuscapet', 'devbuscapet', 'bdbuscapet');
-?>
+    $conn = mysqli_connect('localhost', 'devbuscapet', 'devbuscapet', 'bdbuscapet');
