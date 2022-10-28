@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Enzo">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Dashboard Buscapet - Serviços</title>
+    <title>Dashboard Buscapet - Empresas</title>
 
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/"> -->
 
@@ -73,6 +73,10 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      .wrap {
+        flex-wrap: wrap;
+      }
     </style>
 
     
@@ -106,13 +110,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../empresas/menu.php">
+            <a class="nav-link active" href="../empresas/menu.php">
               <span data-feather="add" class="align-text-bottom"></span>
               Empresas
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./menu.php">
+            <a class="nav-link" aria-current="page" href="../serviços/menu.php">
               <span data-feather="update" class="align-text-bottom"></span>
               Serviços
             </a>
@@ -175,33 +179,37 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <br><br>
       <div class="flex">
-        <h2>Serviços</h2>
-        <button class="btn btn-primary">Adicionar Serviço</button>
+        <h2>Empresas</h2>
+        <form action="./add.php">
+          <button class="btn btn-primary" >Adicionar Empresa</button>
+        </form>
       </div>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">Serviço</th>
-              <th scope="col">Valor</th>
               <th scope="col">Empresa</th>
+              <th scope="col">Contato</th>
               <th scope="col">Categoria</th>
+              <th scope="col" class="wrap">Descrição</th>
+              <th scope="col">Endereço</th>
             </tr>
           </thead>
           <tbody>
             <?php
               include_once('../../../conecta.php');
-              $selecttype = "SELECT idservico, ds_servico, valor_servico, ds_categoria, ds_empresa FROM servicos,empresas,categorias_prodser WHERE servicos.idcategoria = categorias_prodser.idcategoria AND servicos.idempresa = empresas.idempresa";
+              $selecttype = "SELECT idempresa, ds_empresa, contato_empresa, ds_categoria, desc_empresa, endereco_empresa FROM empresas,categorias_empresas WHERE empresas.idcategoria = categorias_empresas.idcategoria";
               $result_type = mysqli_query($conexao, $selecttype);
               while ($tipo = mysqli_fetch_array($result_type)) {
             ?>
                <tr>   
-                <td><?php echo $tipo['idservico'] ?></td>
-                <td><?php echo $tipo['ds_servico'] ?></td>
-                <td><?php echo $tipo['valor_servico'] ?></td>
+                <td><?php echo $tipo['idempresa'] ?></td>
                 <td><?php echo $tipo['ds_empresa'] ?></td>
+                <td><?php echo $tipo['contato_empresa'] ?></td>
                 <td><?php echo $tipo['ds_categoria'] ?></td>
+                <td><?php echo $tipo['desc_empresa'] ?></td>
+                <td><?php echo $tipo['endereco_empresa'] ?></td>
               </tr>
             <?php } ?>
           </tbody>

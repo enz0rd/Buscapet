@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Enzo">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Dashboard Buscapet - Serviços</title>
+    <title>Dashboard Buscapet - Produtos</title>
 
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/"> -->
 
@@ -73,6 +73,10 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      .wrap {
+        flex-wrap: wrap;
+      }
     </style>
 
     
@@ -112,13 +116,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="./menu.php">
+            <a class="nav-link" aria-current="page" href="../serviços/menu.php">
               <span data-feather="update" class="align-text-bottom"></span>
               Serviços
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../produtos/menu.php">
+            <a class="nav-link active" href="../produtos/menu.php">
               <span data-feather="delete" class="align-text-bottom"></span>
               Produtos
             </a>
@@ -175,16 +179,20 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <br><br>
       <div class="flex">
-        <h2>Serviços</h2>
-        <button class="btn btn-primary">Adicionar Serviço</button>
+        <h2>Produtos</h2>
+        <form action="./add.php">
+          <button class="btn btn-primary" >Adicionar Produto</button>
+        </form>
       </div>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">Serviço</th>
+              <th scope="col">Produto</th>
               <th scope="col">Valor</th>
+              <th scope="col">Quantidade</th>
+              <th scope="col" class="wrap">Descrição</th>
               <th scope="col">Empresa</th>
               <th scope="col">Categoria</th>
             </tr>
@@ -192,14 +200,16 @@
           <tbody>
             <?php
               include_once('../../../conecta.php');
-              $selecttype = "SELECT idservico, ds_servico, valor_servico, ds_categoria, ds_empresa FROM servicos,empresas,categorias_prodser WHERE servicos.idcategoria = categorias_prodser.idcategoria AND servicos.idempresa = empresas.idempresa";
+              $selecttype = "SELECT idproduto, ds_produto, valor_produto, qtd_produto, desc_produto, ds_categoria, ds_empresa FROM produtos,empresas,categorias_prodser WHERE produtos.idcategoria = categorias_prodser.idcategoria AND produtos.idempresa = empresas.idempresa";
               $result_type = mysqli_query($conexao, $selecttype);
               while ($tipo = mysqli_fetch_array($result_type)) {
             ?>
                <tr>   
-                <td><?php echo $tipo['idservico'] ?></td>
-                <td><?php echo $tipo['ds_servico'] ?></td>
-                <td><?php echo $tipo['valor_servico'] ?></td>
+                <td><?php echo $tipo['idproduto'] ?></td>
+                <td><?php echo $tipo['ds_produto'] ?></td>
+                <td><?php echo $tipo['valor_produto'] ?></td>
+                <td><?php echo $tipo['qtd_produto'] ?></td>
+                <td><?php echo $tipo['desc_produto'] ?></td>
                 <td><?php echo $tipo['ds_empresa'] ?></td>
                 <td><?php echo $tipo['ds_categoria'] ?></td>
               </tr>
