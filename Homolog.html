@@ -1,75 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style_homolog.css" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-            rel="stylesheet"
-        />
-        <title>Buscapet Homolog</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    </head>
-        <body>
-            <header>
+<html lang="pt-br">
 
-                <!--Navbar-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Buscapet</title>
 
-                <ul class="nav" style="position: relative; z-index: 2; float: right;">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Produtos</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Empresas</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled">Sobre nós</a>
-                    </li>
-                </ul>
-                <div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="position: absolute; width: 100%; top:-100px;">
-                        <path fill="#0072bb" fill-opacity="1" d="M0,160L60,144C120,128,240,96,360,106.7C480,117,600,171,720,213.3C840,256,960,288,1080,293.3C1200,299,1320,277,1380,266.7L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-                    </svg>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
+
+        .conteudo-cabecalho {
+            position: relative;
+            background-image: url(https://img.freepik.com/fotos-gratis/cao-adoravel-com-dono-na-pet-shop_23-2148872556.jpg?w=2000);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 80vh;
+            text-align: center;
+        }
+
+        .conteudo-footer {
+            position: relative;
+            background-color: #0072BB;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 30vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: sans-serif;
+            color: white;
+            padding: 5vh;
+            font-weight: bold;
+        }
+
+        .custom-shape-divider-bottom-1668387711 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-bottom-1668387711 svg {
+            position: relative;
+            display: block;
+            width: calc(137% + 1.3px);
+            height: 100px;
+            transform: rotateY(180deg);
+        }
+
+        .custom-shape-divider-bottom-1668387711 .shape-fill {
+            fill: #FFFFFF;
+        }
+
+        .navbar {
+            background-color: #0072BB;
+            border: 1px solid #0072BB;
+            border-radius: 50px;
+            margin: 20px 50px;
+        }
+
+        .btn_ofertas {
+            background-color: #E6CA38;
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 3px 3px 10px 1px black;
+            margin: 50px 0 0 0;
+            border-radius: 50px;
+            padding: 20px;
+            width: 200px;
+        }
+
+        .btn_servicos {
+            background-color: #8DC83C;
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: bold;
+            box-shadow: 3px 3px 10px 1px black;
+            margin: 50px 0 0 0;
+            border-radius: 50px;
+            padding: 20px;
+            width: 200px;
+        }
+
+        .preco {
+            font-size: 2rem;
+        }
+
+        .custom-shape-divider-top-1668392357 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-top-1668392357 svg {
+            position: relative;
+            display: block;
+            width: calc(103% + 1.3px);
+            height: 95px;
+        }
+
+        .custom-shape-divider-top-1668392357 .shape-fill {
+            fill: #FFFFFF;
+        }
+
+        .card {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="cabecalho">
+        <div class="conteudo-cabecalho">
+
+            <nav class="navbar navbar-expand-lg navbar-dark float-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#produtos">Produtos</a>
+                        <a class="nav-link" href="#">Empresas</a>
+                        <a class="nav-link">Sobre nós</a>
+                    </div>
                 </div>
+            </nav>
 
-                <!--Showcase-->
+            <h1>Procurando algo para <br> o seu pet?</h1>
 
-                <div id="showcase">
-                    <div class="showcase-container">
-                        <p>
-                            Procurando algo para
-                        </p>
-                        <h2>o seu pet?</h2>
-                        <div class="search-box">
-                            <input type="text" class="search-text" placeholder="Digite aqui...">
-                            <a class="search-btn">
-                                <img class="loupe-blue" src="./img/loupe-blue.svg" alt="" width="25px" height="25px">
-                                <img class="loupe-white" src="./img/loupe-white.svg" alt="" width="25px" height="25px">
+            <div class="custom-shape-divider-bottom-1668387711">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="conteudo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="#" class="btn btn-warning btn_ofertas">Ofertas</a>
+                    <a href="#" class="btn btn-warning btn_ofertas float-right">Ver mais</a>
+                    <hr class="divisao m-5">
+                </div>
+            </div>
+
+            <div class="row" id="produtos">
+                <div class="col-md-3 mr-0">
+                    <div class="card p-4" style="width: 16rem;">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1046423/racao_para_caes_adultos_racas_medias_e_grandes_carne_e_vegetais_pedigree_pacote_1kg_7163_1_1d4d8e023737868170b1537e2a40126b.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Ração ligeiro adult 5kg.</p>
+                            <p class="card-text text-center preco">R$ 79,90</p>
                         </div>
-                        <button class="btn-primaria">Ofertas</button>
-                        <button class="btn-secundaria">Ver mais...</button>
-                        <button class="btn-terciaria">Serviços</button>
                     </div>
                 </div>
 
-                <!--Footer-->
-
-                <footer id="footer">
-                    <p>&copy; 2022 Buscapet</p>
-                </footer>
-                <div class:"baseboard">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0072bb" fill-opacity="1" d="M0,32L80,74.7C160,117,320,203,480,224C640,245,800,203,960,170.7C1120,139,1280,117,1360,106.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+                <div class="col-md-3">
+                    <div class="card p-4" style="width: 16rem;">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1046423/racao_para_caes_adultos_racas_medias_e_grandes_carne_e_vegetais_pedigree_pacote_1kg_7163_1_1d4d8e023737868170b1537e2a40126b.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Ração ligeiro adult 20kg.</p>
+                            <p class="card-text text-center preco">R$ 199,90</p>
+                        </div>
+                    </div>
                 </div>
-            </header>
-            <main></main>
-            <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-        </body>
+
+                <div class="col-md-3">
+                    <div class="card p-4" style="width: 16rem;">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1046423/racao_para_caes_adultos_racas_medias_e_grandes_carne_e_vegetais_pedigree_pacote_1kg_7163_1_1d4d8e023737868170b1537e2a40126b.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Ração ligeiro adult 10kg.</p>
+                            <p class="card-text text-center preco">R$ 85,90</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card p-4" style="width: 16rem;">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1046423/racao_para_caes_adultos_racas_medias_e_grandes_carne_e_vegetais_pedigree_pacote_1kg_7163_1_1d4d8e023737868170b1537e2a40126b.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Ração ligeiro adult 15kg.</p>
+                            <p class="card-text text-center preco">R$ 115,90</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="#" class="btn btn-success btn_servicos">Serviços</a>
+                    <a href="#" class="btn btn-success btn_servicos float-right">Ver mais</a>
+                    <hr class="divisao m-5">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 mr-0">
+                    <div class="card p-4" style="width: 16rem;">
+                        <img src="https://i0.wp.com/portaledicase.com/wp-content/uploads/2022/02/Como-dar-banho-no-pet-shutterstock.jpg?fit=1200%2C800&ssl=1"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Banho</p>
+                            <p class="card-text text-center preco">R$ 30,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card p-4" style="width: 16rem;">
+                        <img src="https://www.petz.com.br/blog/wp-content/uploads/2019/05/servicos-de-pet-shop-3.jpg"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Banho e Tosa</p>
+                            <p class="card-text text-center preco">R$ 65,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card p-4" style="width: 16rem;">
+                        <img src="https://dogcenter.com.br/wp-content/uploads/2020/10/clinica-veterinaria-em-goiania-banho-e-tosa.png"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Tosa Detalhada</p>
+                            <p class="card-text text-center preco">R$ 50,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card p-4" style="width: 16rem;">
+                        <img src="https://petshopnossobicho.com.br/images/photos/veterinario.jpg" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+                            <p class="card-text text-center">Consultas e Vacinas</p>
+                            <p class="card-text text-center preco">R$ 200,90</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="sec_footer">
+        <div class="conteudo-footer">
+            <div class="custom-shape-divider-top-1668392357">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
