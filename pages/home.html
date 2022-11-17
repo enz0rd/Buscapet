@@ -1,0 +1,197 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;1000&display=swap');
+
+    body {
+        font-family: 'Nunito', sans-serif;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: black;
+    }
+
+    .sectionsearch {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: url("https://images.tcdn.com.br/files/1142507/themes/5/img/settings/PetShop-BannerRodapeProdutos.png");
+        background-position: center;
+        background-size: 1920px 300px;
+        padding: 80px;
+        margin-bottom: 50px;
+    }
+
+    .searchbox {
+        font-family: 'Nunito', sans-serif;
+        font-size: 50px;
+        background-color: aliceblue;
+        padding: 30px;
+        border-radius: 50px;
+        box-shadow: #4f4f4f 10px 10px 50px 10px;
+    }
+    .searchfield {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .textsearch {
+        display: flex;
+        font-weight: 1000;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .products {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prod-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .grid-prod {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .prodshowcase {
+        padding: 20px;
+        border: 5px solid #a9a9a9;
+        border-radius: 20px;
+        box-shadow: #4f4f4f 5px 5px 10px;
+        transition: 0.3s;
+    }
+
+    .prodshowcase:hover {
+        transform: scale(103%);
+    }
+</style>
+<body>
+    <main>
+        <section class="sectionsearch">
+            <div class="searchbox">
+                <h0 class="textsearch">O quê você procura?</h0>
+                <div class="searchfield">
+                    <select class="select" name="category" id="cat">
+                        <option>Categorias</option>
+                        <option value="prod">Produtos</option>
+                        <option value="serv">Serviços</option>
+                        <option value="empr">Empresas</option>
+                    </select>
+                    <input type="text" class="search" placeholder="Digite aqui...">
+                    <button class="searchbutton" type="submit">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="products">
+            <div class="prod-buttons">
+                <h1 class="prod-title">Produtos</h1>
+                <button onclick="refpageprod()">Ver mais</button>
+            </div>
+            <div class="grid-prod">
+                <button class="prodshowcase">
+                    <a href="#">
+                        <img class="prod-img" src="#" alt="Imagem">
+                        <h2 class="prod-text-h2">Ração blablabla</h2>
+                        <h3 class="prod-text-h3">R$120,99</h3>
+                    </a>
+                </button>
+                <button class="prodshowcase">
+                    <a href="#">
+                        <img class="prod-img" src="#" alt="Imagem">
+                        <h2 class="prod-text-h2">Ração blablabla</h2>
+                        <h3 class="prod-text-h3">R$120,99</h3>
+                    </a>
+                </button>
+                <button class="prodshowcase">
+                    <a href="#">
+                        <img class="prod-img" src="#" alt="Imagem">
+                        <h2 class="prod-text-h2">Ração blablabla</h2>
+                        <h3 class="prod-text-h3">R$120,99</h3>
+                    </a>
+                </button>
+                <button class="prodshowcase">
+                    <a href="#">
+                        <img class="prod-img" src="#" alt="Imagem">
+                        <h2 class="prod-text-h2">Ração blablabla</h2>
+                        <h3 class="prod-text-h3">R$120,99</h3>
+                    </a>
+                </button>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="serv-buttons">
+                <h1 class="serv-title">Serviços</h1>
+                <button onclick="refpageserv()">Ver mais</button>
+            </div>
+            <div class="grid-serv">
+                <div class="servshowcase">
+                    <a href="#">
+                        <img class="serv-img" src="#" alt="Imagem">
+                        <h2 class="serv-text-h2">Banho e tosa</h2>
+                        <h3 class="serv-text-h3">R$120,99</h3>
+                    </a>
+                </div>
+                <div class="servshowcase">
+                    <a href="#">
+                        <img class="serv-img" src="#" alt="Imagem">
+                        <h2 class="serv-text-h2">Banho e tosa</h2>
+                        <h3 class="serv-text-h3">R$120,99</h3>
+                    </a>
+                </div>
+                <div class="servshowcase">
+                    <a href="#">
+                        <img class="serv-img" src="#" alt="Imagem">
+                        <h2 class="serv-text-h2">Banho e tosa</h2>
+                        <h3 class="serv-text-h3">R$120,99</h3>
+                    </a>
+                </div>
+                <div class="servshowcase">
+                    <a href="#">
+                        <img class="serv-img" src="#" alt="Imagem">
+                        <h2 class="serv-text-h2">Banho e tosa</h2>
+                        <h3 class="serv-text-h3">R$120,99</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        refpageprod = () => {
+            window.location.assign("/produtos")
+        } 
+        refpageserv = () => {
+            window.location.assign("/servicos")
+        } 
+    </script>
+    
+</body>
+</html>
