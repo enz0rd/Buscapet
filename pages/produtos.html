@@ -1,0 +1,713 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;1000&display=swap');
+
+
+    body {
+	background: #e2eaef;
+    }
+
+    .title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .Title-products {
+        background:#ffc000;
+        box-shadow: 0px 4px 15px #7c7c7c;
+        padding: 15px;
+        border: 1px solid #b88a00;
+        border-radius: 30px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 30px;
+        color: white;
+        text-shadow: 2px 2px 4px #634a00;
+        font-weight: 700;
+    }
+    .Title-services {
+        background:#46ca25;
+        box-shadow: 0px 4px 15px #7c7c7c;
+        padding: 15px;
+        border: 1px solid #239400;
+        border-radius: 30px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 30px;
+        color: white;
+        text-shadow: 2px 2px 4px #125701;
+        font-weight: 700;
+    }
+
+    .buttonClass {
+    font-size:15px;
+    font-family:'Nunito', sans-serif;
+    padding: 10px;
+    border-width:1px solid;
+    box-shadow: 0px 2px 10px #7c7c7c;
+    color:#fff;
+    border-color:#b88a00;
+    font-weight:400;
+    border-radius:28px;
+    text-shadow: 2px 2px 3px #634a00;
+    background:#ffc000;
+    transition: 0.3s;
+    }
+    .buttonClass-services {
+    font-size:15px;
+    font-family:'Nunito', sans-serif;
+    padding: 10px;
+    border-width:1px solid;
+    box-shadow: 0px 2px 10px #7c7c7c;
+    color:#fff;
+    border-color:#b88a00;
+    font-weight:400;
+    border-radius:28px;
+    text-shadow: 2px 2px 3px #125701;
+    background:#46ca25;
+    transition: 0.3s;
+    }
+
+    .buttonClass-services:hover {
+    background: #239400
+    }
+
+    .carousel {
+        margin: 50px auto;
+        padding: 0 70px;
+    }
+    .carousel-services {
+        margin: 50px auto;
+        padding: 0 70px;
+    }
+    .carousel .item {
+        color: #747d89;
+        min-height: 325px;
+        text-align: center;
+        overflow: hidden;
+    }
+    .carousel-services .item {
+        color: #747d89;
+        min-height: 325px;
+        text-align: center;
+        overflow: hidden;
+    }
+    .carousel .thumb-wrapper {
+        padding: 25px 15px;
+        background: #fff;
+        border-radius: 6px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    }
+    .carousel-services .thumb-wrapper {
+        padding: 25px 15px;
+        background: #fff;
+        border-radius: 6px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+    }
+    .carousel .item .img-box {
+        height: 120px;
+        margin-bottom: 20px;
+        width: 100%;
+        position: relative;
+    }
+    .img-fluid {
+        border-radius: 20px;
+    }
+    .carousel-services .item .img-box {
+        height: 120px;
+        margin-bottom: 20px;
+        width: 100%;
+        position: relative;
+    }
+    .carousel .item img {	
+        max-width: 100%;
+        max-height: 100%;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+    .carousel-services .item img {	
+        max-width: 100%;
+        max-height: 100%;
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+    .carousel .item h4 {
+        font-size: 18px;
+    }
+    .carousel .item h4, .carousel .item p, .carousel .item ul {
+        margin-bottom: 5px;
+    }
+    .carousel-services .item h4 {
+        font-size: 18px;
+    }
+    .carousel-services .item h4, .carousel-services .item p, .carousel-services .item ul {
+        margin-bottom: 5px;
+    }
+    .carousel .thumb-content .btn {
+        color: #ffc000;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background: none;
+        border: 1px solid #ffc000;
+        padding: 6px 14px;
+        margin-top: 5px;
+        line-height: 16px;
+        border-radius: 20px;
+    }
+    .carousel-services  .thumb-content .btn {
+        color: #46ca25;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background: none;
+        border: 1px solid #46ca25;
+        padding: 6px 14px;
+        margin-top: 5px;
+        line-height: 16px;
+        border-radius: 20px;
+    }
+    .carousel .thumb-content .btn:hover, .carousel .thumb-content .btn:focus {
+        color: #fff;
+        background: #ffc000;
+        box-shadow: none;
+    }
+    .carousel-services .thumb-content .btn:hover, .carousel-services .thumb-content .btn:focus {
+        color: #fff;
+        background: #46ca25;
+        box-shadow: none;
+    }
+    .carousel .thumb-content .btn i {
+        font-size: 14px;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+    .carousel .item-price {
+        font-size: 20px;
+        padding: 2px 0;
+    }
+    .carousel .item-price strike {
+        opacity: 0.7;
+        margin-right: 5px;
+    }
+    .carousel-services .thumb-content .btn i {
+        font-size: 14px;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+    .carousel-services .item-price {
+        font-size: 20px;
+        padding: 2px 0;
+    }
+    .carousel-services .item-price strike {
+        opacity: 0.7;
+        margin-right: 5px;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        height: 44px;
+        width: 40px;
+        background: #ffc000;	
+        margin: auto 0;
+        border-radius: 4px;
+        opacity: 0.8;
+    }
+    .carousel-control-prev-services, .carousel-control-next-services {
+        height: 44px;
+        width: 40px;
+        background: #46ca25;	
+        margin: auto 0;
+        border-radius: 4px;
+        opacity: 0.8;
+    }
+    
+    .carousel-control-prev:hover, .carousel-control-next:hover {
+        background: #ffc000;
+        opacity: 1;
+    }
+    .carousel-control-prev-services:hover,.carousel-control-next-services:hover {
+        background: #46ca25;
+        opacity: 1;
+    }
+    .carousel-control-prev i, .carousel-control-next i {
+        font-size: 36px;
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        margin: -19px 0 0 0;
+        z-index: 5;
+        left: 0;
+        right: 0;
+        color: #fff;
+        text-shadow: none;
+        font-weight: bold;
+    }
+    .carousel-control-prev-services i, .carousel-control-next-services i {
+        font-size: 36px;
+        position: absolute;
+        top: 50%;
+        display: inline-block;
+        margin: -19px 0 0 0;
+        z-index: 5;
+        left: 0;
+        right: 0;
+        color: #fff;
+        text-shadow: none;
+        font-weight: bold;
+    }
+    .carousel-control-prev i {
+        margin-left: -2px;
+    }
+    .carousel-control-prev-services i {
+        margin-left: -2px;
+    }
+    .carousel-control-next i {
+        margin-right: -4px;
+    }		
+    .carousel-control-next-services i {
+        margin-right: -4px;
+    }		
+    .carousel-indicators {
+        bottom: -50px;
+    }
+    .carousel-indicators li, .carousel-indicators li.active {
+        width: 10px;
+        height: 10px;
+        margin: 4px;
+        border-radius: 50%;
+        border: none;
+    }
+    .carousel-indicators li {	
+        background: rgba(0, 0, 0, 0.2);
+    }
+    .carousel-indicators li.active {	
+        background: rgba(0, 0, 0, 0.6);
+    }
+    .carousel .wish-icon {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 99;
+        cursor: pointer;
+        font-size: 16px;
+        color: #abb0b8;
+    }
+    .carousel .wish-icon .fa-heart {
+        color: #ff6161;
+    }
+    .carousel-services .wish-icon {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 99;
+        cursor: pointer;
+        font-size: 16px;
+        color: #abb0b8;
+    }
+    .carousel-services .wish-icon .fa-heart {
+        color: #ff6161;
+    }
+    .star-rating li {
+        padding: 0;
+    }
+    .star-rating i {
+        font-size: 14px;
+        color: #ffc000;
+    }
+</style>
+
+<body>
+    <main>
+        <br><br><br>
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2 class="Title-products">Produtos</h2>
+                    </div>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/ração.jpg" class="img-fluid" alt="ração">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Ração dg.</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$200,00</strike> <b>R$149,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/remédio.jpg" class="img-fluid" alt="remédio">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Antitóxico</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$50,00</strike> <b>R$39,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/Ração2.jpg" class="img-fluid" alt="ração">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Ração Pitty</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$130,00</strike> <b>R$100,00</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/brinquedo.jpg" class="img-fluid" alt="brinquedo">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Brinquedo Mordedor</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$15,00</strike> <b>R$4,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/ração.jpg" class="img-fluid" alt="ração">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Ração dg.</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$200,00</strike> <b>R$149,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/remédio.jpg" class="img-fluid" alt="remédio">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Antitóxico</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$50,00</strike> <b>R$39,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/Ração2.jpg" class="img-fluid" alt="ração">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Ração Pitty</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$130,00</strike> <b>R$100,00</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/brinquedo.jpg" class="img-fluid" alt="brinquedo">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Brinquedo Mordedor</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$15,00</strike> <b>R$4,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/ração.jpg" class="img-fluid" alt="ração">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Ração dg.</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$200,00</strike> <b>R$149,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/remédio.jpg" class="img-fluid" alt="remédio">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Antitóxico</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$50,00</strike> <b>R$39,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/Ração2.jpg" class="img-fluid" alt="ração">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Ração Pitty</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$130,00</strike> <b>R$100,00</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/brinquedo.jpg" class="img-fluid" alt="brinquedo">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Brinquedo Mordedor</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$15,00</strike> <b>R$4,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/ração.jpg" class="img-fluid" alt="ração">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Ração dg.</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$200,00</strike> <b>R$149,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/remédio.jpg" class="img-fluid" alt="remédio">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Antitóxico</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$50,00</strike> <b>R$39,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/Ração2.jpg" class="img-fluid" alt="ração">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Ração Pitty</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$130,00</strike> <b>R$100,00</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                                <div class="col-sm-3">
+                                    <div class="thumb-wrapper">
+                                        <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                        <div class="img-box">
+                                            <img src="/img/brinquedo.jpg" class="img-fluid" alt="brinquedo">									
+                                        </div>
+                                        <div class="thumb-content">
+                                            <h4>Brinquedo Mordedor</h4>									
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                            </div>
+                                            <p class="item-price"><strike>R$15,00</strike> <b>R$4,90</b></p>
+                                        </div>						
+                                    </div>
+                                </div>		
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+    </main>
+
+</body>
+
+</html>
