@@ -37,7 +37,7 @@
                 <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Home</a></li>
                 <li class="nav-item"><a href="/produtos" class="nav-link">Produtos</a></li>
                 <li class="nav-item"><a href="/servicos" class="nav-link">Serviços</a></li>
-                <li class="nav-item"><a href="/empresas" class="nav-link">Empresas</a></li>
+                <!-- <li class="nav-item"><a href="/empresas" class="nav-link">Empresas</a></li> -->
                 <li class="nav-item"><a href="/about" class="nav-link">Sobre nós</a></li>
             </ul>
         </header>
@@ -58,8 +58,7 @@
                     <p>
                         Buscapet é uma startup que visa comparar facilmente os preços
                         de produtos para todos os pets do Brasil. Começando em Agosto
-                        de 2022, Buscapet vem crescendo aos poucos por ser programado
-                        apenas por uma pessoa.
+                        de 2022, Buscapet vem crescendo aos poucos.
                     </p>
                 </div>
                 <!--Grid column-->
@@ -78,9 +77,9 @@
                         <li>
                             <a href="/servicos" class="text-white">Serviços</a>
                         </li>
-                        <li>
+                        <!--<li>
                             <a href="/empresas" class="text-white">Empresas</a>
-                        </li>
+                        </li>-->
                         <li>
                             <a href="/about" class="text-white">Sobre nós</a>
                         </li>
