@@ -1,27 +1,18 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.2.2",
-    "express": "^4.18.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.20",
-    "uuid": "^9.0.0"
-  },
-  "name": "buscapet",
-  "description": "Bem vindo!",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon ./restapi/app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/enz0rd/Buscapet.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/enz0rd/Buscapet/issues"
-  },
-  "homepage": "https://github.com/enz0rd/Buscapet#readme"
+    "private": true,
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "install": "npm i axios laravel-vite-plugin lodash postcss vite bootstrap"
+    },
+    "devDependencies": {
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.6.0",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "vite": "^3.0.0"
+    },
+    "dependencies": {
+        "bootstrap": "^5.2.2"
+    }
 }
