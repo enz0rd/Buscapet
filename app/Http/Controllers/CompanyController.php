@@ -8,11 +8,10 @@ class CompanyController extends Controller
 {
     public function index()
     {
-        $busca = request('search');
-        return view('empresas', ['busca' => $busca]);
+        return view('empresas');
     }
-    public function id($id)
+    public function add()
     {
-        return view('empresa', ['id' => $id]);
+        return view('cadastro_empresas');
     }
 }

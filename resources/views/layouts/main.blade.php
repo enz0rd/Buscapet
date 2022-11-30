@@ -37,7 +37,7 @@
                 <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Home</a></li>
                 <li class="nav-item"><a href="/produtos" class="nav-link">Produtos</a></li>
                 <li class="nav-item"><a href="/servicos" class="nav-link">Serviços</a></li>
-                <!-- <li class="nav-item"><a href="/empresas" class="nav-link">Empresas</a></li> -->
+                <li class="nav-item"><a href="/empresas" class="nav-link">Empresas</a></li>
                 <li class="nav-item"><a href="/about" class="nav-link">Sobre nós</a></li>
             </ul>
         </header>
@@ -77,11 +77,14 @@
                         <li>
                             <a href="/servicos" class="text-white">Serviços</a>
                         </li>
-                        <!--<li>
+                        <li>
                             <a href="/empresas" class="text-white">Empresas</a>
-                        </li>-->
+                        </li>
                         <li>
                             <a href="/about" class="text-white">Sobre nós</a>
+                        </li>
+                        <li>
+                            <a href="/dashboard" class="text-white">Dashboard</a>
                         </li>
                     </ul>
                 </div>

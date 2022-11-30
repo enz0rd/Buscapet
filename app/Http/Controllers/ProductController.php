@@ -12,8 +12,8 @@ class ProductController extends Controller
         return view('produtos', ['busca' => $busca]);
     }
 
-    public function id($id)
+    public function add()
     {
-        return view('produto', ['id' => $id]);
+        return view('cadastro_produto');
     }
 }

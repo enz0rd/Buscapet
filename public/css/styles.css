@@ -34,8 +34,6 @@ elemento {
     box-shadow: #7c7c7c 0px 10px 10px;
 }
 
-
-
 body {
     background: url('/img/About-Wallpaper.jpg');
     background-size: contain;
@@ -51,6 +49,12 @@ body {
     padding-right: 20px;
     margin: auto;
     box-shadow: #5a5a5a 0px 0px 50px;
+}
+
+.displaycenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title {
@@ -86,6 +90,44 @@ body {
     font-weight: 700;
 }
 
+.Title-dashboard {
+    background: var(--orange);
+    box-shadow: 0px 4px 15px #7c7c7c;
+    padding: 15px;
+    border: 1px solid #a35311;
+    border-radius: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px #a35311;
+    font-weight: 700;
+}
+
+.Title-categories {
+    background: var(--primary);
+    box-shadow: 0px 4px 15px #7c7c7c;
+    padding: 15px;
+    border: 1px solid var(--secundario);
+    border-radius: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px var(--secundario);
+    font-weight: 700;
+}
+
+.buttonsdash {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.buttonClass, .buttonClass-categories, .buttonClass-company, .buttonClass-services {
+    text-decoration: none;
+}
+
 .buttonClass {
     font-size: 15px;
     font-family: 'Nunito', sans-serif;
@@ -98,6 +140,36 @@ body {
     border-radius: 28px;
     text-shadow: 2px 2px 3px #634a00;
     background: var(--yellow);
+    transition: 0.3s;
+}
+
+.buttonClass-categories {
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    padding: 10px;
+    border-width: 1px solid;
+    box-shadow: 0px 2px 10px #7c7c7c;
+    color: #fff;
+    border-color: var(--secundario);
+    font-weight: 400;
+    border-radius: 28px;
+    text-shadow: 2px 2px 3px #00558a;
+    background: var(--primary);
+    transition: 0.3s;
+}
+
+.buttonClass-company {
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    padding: 10px;
+    border-width: 1px solid;
+    box-shadow: 0px 2px 10px #7c7c7c;
+    color: #fff;
+    border-color: #a35311;
+    font-weight: 400;
+    border-radius: 28px;
+    text-shadow: 2px 2px 3px #a35311;
+    background: var(--orange);
     transition: 0.3s;
 }
 
@@ -501,6 +573,16 @@ body {
     word-wrap: break-word;
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
+}
+
+.text-dash {
+    font-size: 20px;
+    max-width: 700px;
+    word-wrap: break-word;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .links {

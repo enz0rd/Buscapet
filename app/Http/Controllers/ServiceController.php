@@ -11,8 +11,8 @@ class ServiceController extends Controller
         $busca = request('search');
         return view('servicos', ['busca' => $busca]);
     }
-    public function id($id)
+    public function add()
     {
-        return view('servico', ['id' => $id]);
+        return view('cadastro_servico');
     }
 }

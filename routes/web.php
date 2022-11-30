@@ -15,24 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
-/*use App\Http\Controllers\CompanyController;*/
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// });
-
 Route::get('/produtos', [ProductController::class, 'index']);
 Route::get('/servicos', [ServiceController::class, 'index']);
-/*Route::get('/empresas', [CompanyController::class, 'index']);*/
+Route::get('/empresas', [CompanyController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
-Route::get('/test', [TestController::class, 'index']);
+Route::get('/dashboard', [DashController::class, 'index']);
 
-// Route::get('/produtos/{id}', [ProductController::class, 'id']);
-// Route::get('/empresas/{id}', [CompanyController::class, 'id']);
-// Route::get('/servicos/{id}', [ServiceController::class, 'id']);
+Route::get('/produtos/add', [ProductController::class, 'add']);
+Route::get('/empresas/add', [CompanyController::class, 'add']);
+Route::get('/servicos/add', [ServiceController::class, 'add']);
+Route::get('/categorias/add', [CategoryController::class, 'add']);
