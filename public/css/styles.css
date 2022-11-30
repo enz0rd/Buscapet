@@ -454,10 +454,13 @@ body {
     align-self: center;
     margin: auto;
     flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 100px;
     max-width: 500px;
     min-width: 500px;
     justify-content: center;
     background: white;
+    gap: 20px;
     padding: 50px;
     border-radius: 40px;
     box-shadow: #7c7c7c 5px 5px 10px
@@ -474,6 +477,7 @@ body {
     background: var(--primary);
     box-shadow: 0px 4px 15px #7c7c7c;
     padding: 15px;
+    margin-bottom: 30px;
     border: 1px solid var(--secundario);
     border-radius: 30px;
     font-family: 'Nunito', sans-serif;
@@ -492,6 +496,7 @@ body {
 }
 
 .text {
+    font-size: 20px;
     max-width: 600px;
     word-wrap: break-word;
     font-family: 'Nunito', sans-serif;
