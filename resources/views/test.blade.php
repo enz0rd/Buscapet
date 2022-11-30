@@ -23,10 +23,10 @@
                     <!-- Wrapper for carousel items -->
                     <div class="carousel-inner">
                         <div class="item carousel-item active">
-                            <div class="row">
-                            <?php
+                            <div class="row" >
+                                <?php
                                     $conn = mysqli_connect("localhost", "devbuscapet", "devbuscapet", "bdbuscapet") or die ("erro na conexão");
-                                    $query = "select * from servicos order by valor_servico";
+                                    $query = "select * from servicos";
                                     $result_query = mysqli_query($conn,$query) or die('erro na query:'.$query);
                                     while ($row = $result_query->fetch_assoc()) {
 

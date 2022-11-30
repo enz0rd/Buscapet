@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 
 elemento {
@@ -33,7 +34,6 @@ elemento {
     box-shadow: #7c7c7c 0px 10px 10px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;1000&display=swap');
 
 
 body {
