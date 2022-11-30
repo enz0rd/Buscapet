@@ -20,7 +20,7 @@
                             <div class="row">
                             <?php
                                     $conn = mysqli_connect("localhost", "devbuscapet", "devbuscapet", "bdbuscapet") or die ("erro na conexão");
-                                    $query = "select * from produtos limit 4";
+                                    $query = "select *, ds_empresa from produtos, empresas where produtos.idempresa = empresas.idempresa limit 4";
                                     $result_query = mysqli_query($conn,$query) or die('erro na query:'.$query);
                                     while ($row = $result_query->fetch_assoc()) {
 
@@ -33,6 +33,7 @@
                                                 </div>
                                                 <div class="thumb-content">
                                                     <h4><?php echo $row['ds_produto'] ?></h4>
+                                                    <p><small><?php echo $row['ds_empresa'] ?></small></p>
                                                     <div class="star-rating">
                                                         <ul class="list-inline">
                                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -80,7 +81,7 @@
                             <div class="row">
                             <?php
                                     $conn = mysqli_connect("localhost", "devbuscapet", "devbuscapet", "bdbuscapet") or die ("erro na conexão");
-                                    $query = "select * from servicos limit 4";
+                                    $query = "select *, ds_empresa from servicos, empresas where servicos.idempresa = empresas.idempresa limit 4";
                                     $result_query = mysqli_query($conn,$query) or die('erro na query:'.$query);
                                     while ($row = $result_query->fetch_assoc()) {
 
@@ -93,6 +94,7 @@
                                                 </div>
                                                 <div class="thumb-content">
                                                     <h4><?php echo $row['ds_servico'] ?></h4>
+                                                    <p><small><?php echo $row['ds_empresa'] ?></small></p>
                                                     <div class="star-rating">
                                                         <ul class="list-inline">
                                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
