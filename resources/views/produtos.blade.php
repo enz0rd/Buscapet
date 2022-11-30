@@ -15,7 +15,7 @@
                 <br><br>
                 <div class="banner wrapper">
                     <a href="/">
-                        <img src="./img/bannerhome.jpg" alt="banner" class="bannerserv">
+                        <img src="/img/bannerhome.jpg" alt="banner" class="bannerserv">
                     </a>
                 </div>
                 <br>
@@ -26,7 +26,7 @@
                             <div class="row">
                             <?php
                                     $conn = mysqli_connect("localhost", "devbuscapet", "devbuscapet", "bdbuscapet") or die ("erro na conexão");
-                                    $query = "select *, ds_empresa from produtos, empresas where produtos.idempresa = empresas.idempresa";
+                                    $query = "select *, ds_empresa, contato_empresa from produtos, empresas where produtos.idempresa = empresas.idempresa order by valor_produto";
                                     $result_query = mysqli_query($conn,$query) or die('erro na query:'.$query);
                                     while ($row = $result_query->fetch_assoc()) {
 
@@ -35,8 +35,9 @@
                                             <div class="thumb-wrapper">
                                                 <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                                                 <div class="img-box">
-                                                    <img src="./img/produtos/<?php echo $row['img_produto'] ?>" class="img-fluid" alt="<?php echo $row['img_produto'] ?>">
+                                                    <img src="/img/produtos/<?php echo $row['img_produto'] ?>" class="img-fluid" alt="<?php echo $row['img_produto'] ?>">
                                                 </div>
+                                                <hr>
                                                 <div class="thumb-content">
                                                     <h4><?php echo $row['ds_produto'] ?></h4>
                                                     <p><small><?php echo $row['ds_empresa'] ?></small></p>
@@ -50,6 +51,8 @@
                                                         </ul>
                                                     </div>
                                                     <p class="item-price"><b>R$<?php echo $row['valor_produto'] ?></b></p>
+                                                    <br>
+                                                    <a class="buttonClass" href="https://wa.me/55<?php echo $row['contato_empresa'] ?>">Contate a empresa</a>
                                                 </div>
                                             </div>
                                         </div>

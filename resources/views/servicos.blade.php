@@ -26,7 +26,7 @@
                             <div class="row">
                             <?php
                                     $conn = mysqli_connect("localhost", "devbuscapet", "devbuscapet", "bdbuscapet") or die ("erro na conexão");
-                                    $query = "select * from servicos order by valor_servico";
+                                    $query = "select *,ds_empresa, contato_empresa from servicos,empresas where servicos.idempresa = empresas.idempresa order by valor_servico";
                                     $result_query = mysqli_query($conn,$query) or die('erro na query:'.$query);
                                     while ($row = $result_query->fetch_assoc()) {
 
@@ -39,6 +39,7 @@
                                                 </div>
                                                 <div class="thumb-content">
                                                     <h4><?php echo $row['ds_servico'] ?></h4>
+                                                    <p><small><?php echo $row['ds_empresa'] ?></small></p>
                                                     <div class="star-rating">
                                                         <ul class="list-inline">
                                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -49,6 +50,8 @@
                                                         </ul>
                                                     </div>
                                                     <p class="item-price"><b>R$<?php echo $row['valor_servico'] ?></b></p>
+                                                    <br>
+                                                    <a class="buttonClass-services" href="https://wa.me/55<?php echo $row['contato_empresa'] ?>">Contate a empresa</a>
                                                 </div>
                                             </div>
                                         </div>
