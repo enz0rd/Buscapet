@@ -19,6 +19,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashController;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +29,7 @@ Route::get('/servicos', [ServiceController::class, 'index']);
 Route::get('/empresas', [CompanyController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/dashboard', [DashController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
 
 Route::get('/produtos/add', [ProductController::class, 'add']);
 Route::get('/empresas/add', [CompanyController::class, 'add']);

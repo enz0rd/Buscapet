@@ -84,7 +84,7 @@
                             <a href="/about" class="text-white">Sobre nós</a>
                         </li>
                         <li>
-                            <a href="/dashboard" class="text-white">Dashboard</a>
+                            <a href="/login" class="text-white">Dashboard</a>
                         </li>
                     </ul>
                 </div>

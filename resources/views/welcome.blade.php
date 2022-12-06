@@ -20,7 +20,7 @@
                             <div class="row">
                             <?php
                                     $conn = mysqli_connect("localhost", "devbuscapet", "devbuscapet", "bdbuscapet") or die ("erro na conexão");
-                                    $query = "select *, ds_empresa from produtos, empresas where produtos.idempresa = empresas.idempresa limit 4";
+                                    $query = "select *, ds_empresa from produtos, empresas where produtos.idempresa = empresas.idempresa order by valor_produto limit 4";
                                     $result_query = mysqli_query($conn,$query) or die('erro na query:'.$query);
                                     while ($row = $result_query->fetch_assoc()) {
 
@@ -81,7 +81,7 @@
                             <div class="row">
                             <?php
                                     $conn = mysqli_connect("localhost", "devbuscapet", "devbuscapet", "bdbuscapet") or die ("erro na conexão");
-                                    $query = "select *, ds_empresa from servicos, empresas where servicos.idempresa = empresas.idempresa limit 4";
+                                    $query = "select *, ds_empresa from servicos, empresas where servicos.idempresa = empresas.idempresa order by valor_servico limit 4";
                                     $result_query = mysqli_query($conn,$query) or die('erro na query:'.$query);
                                     while ($row = $result_query->fetch_assoc()) {
 

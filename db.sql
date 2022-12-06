@@ -52,6 +52,21 @@ CREATE TABLE `empresas` (
 
 -- --------------------------------------------------------
 
+
+CREATE TABLE `usuarios` (
+	`iduser` int(11) NOT NULL AUTO_INCREMENT,
+    `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+    `name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+    `password` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+    `idempresa` int(11) NOT NULL,
+    PRIMARY KEY (`iduser`),
+    UNIQUE KEY `email`(`email`, `name`, `password`),
+    KEY `idempresa` (`idempresa`),
+    CONSTRAINT `empresas_ibfk1` FOREIGN KEY (`idempresa`) REFERENCES `empresas` (`idempresa`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+
 --
 -- Estrutura da tabela `produtos`
 --
