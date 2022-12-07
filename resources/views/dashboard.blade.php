@@ -15,7 +15,11 @@
                 <br><br>
                 <div class="displaycenter">
                     <p class="text-dash">
-                        Bem vindo à dashboard do site Buscapet!
+                        Bem vindo à dashboard do site Buscapet 
+                        <?php
+                            session_start();
+                            echo "Usuario: ". $_SESSION['usuarioNome'];    
+                        ?>!
                     </p>
                     <p class="text-dash">
                         Aqui você pode adicionar produtos, categorias, empresas ou serviços.
@@ -30,6 +34,8 @@
                     <a href="/categorias/add" class="buttonClass-categories">Adicionar Categorias</a>
                     <a href="/empresas/add" class="buttonClass-company">Adicionar Empresas</a>
                 </div>
+
+                <a class="buttonClass-categories" href="/sair">Sair</a>
             </div>
         </div>
                 <br><br><br>

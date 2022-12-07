@@ -30,6 +30,7 @@ Route::get('/empresas', [CompanyController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/dashboard', [DashController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
+Route::get('/sair', [LoginController::class, 'logout']);
 
 Route::get('/produtos/add', [ProductController::class, 'add']);
 Route::get('/empresas/add', [CompanyController::class, 'add']);
