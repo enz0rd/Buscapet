@@ -4,6 +4,19 @@
 
 @section('content')
 
+<?php
+if(session_status() !== PHP_SESSION_ACTIVE){
+    session_cache_expire(1);
+    session_cache_limiter(1);
+    session_start();
+}
+if(!isset($_SESSION['usuarioId']) or isset($_SESSION['time']) and isset($_SESSION['time']) + 300 < time()) {
+    echo "<meta http-equiv='refresh' content='0; url=/login'>";
+} else {
+    $_SESSION['time'] = time();
+}
+?>
+
 <div class="content">
     <br><br><br>
     <div class="container-xl">
@@ -15,11 +28,7 @@
                 <br><br>
                 <div class="displaycenter">
                     <p class="text-dash">
-                        Bem vindo à dashboard do site Buscapet 
-                        <?php
-                            session_start();
-                            echo "Usuario: ". $_SESSION['usuarioNome'];    
-                        ?>!
+                        Bem vindo à dashboard do site Buscapet
                     </p>
                     <p class="text-dash">
                         Aqui você pode adicionar produtos, categorias, empresas ou serviços.

@@ -6,7 +6,6 @@
 
 <?php
 	//Inicializado primeira a sessão para posteriormente recuperar valores das variáveis globais. 
-    session_start();
 ?>
 
 <section class="vh-100" style="background-color: #fff;">
@@ -29,12 +28,12 @@
 
                   <div class="form-outline mb-4">
                       <label class="form-label" for="email">Endereço de Email</label>
-                    <input type="email" id="email" class="form-control form-control-lg" />
+                    <input type="email" id="email" name="email" class="form-control form-control-lg" />
                   </div>
 
                   <div class="form-outline mb-4">
                       <label class="form-label" for="password">Senha</label>
-                    <input type="password" id="password" class="form-control form-control-lg" />
+                    <input type="password" id="password" name="password" class="form-control form-control-lg" />
                   </div>
 
                   <div class="pt-1 mb-4">

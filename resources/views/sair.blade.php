@@ -7,6 +7,7 @@
         $_SESSION['usuarioEmail'],
         $_SESSION['usuarioSenha']
     );   
+    session_destroy();
     $_SESSION['logindeslogado'] = "Deslogado com sucesso";
     //redirecionar o usuario para a página de login
     echo "<meta http-equiv='refresh' content='1; url=/login'>";
