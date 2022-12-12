@@ -10,7 +10,7 @@ if(session_status() !== PHP_SESSION_ACTIVE){
     session_cache_limiter(1);
     session_start();
 }
-if(!isset($_SESSION['usuarioId']) or isset($_SESSION['time']) and isset($_SESSION['time']) + 300 < time()) {
+if(!isset($_SESSION['usuarioId'])) {
     echo "<meta http-equiv='refresh' content='0; url=/login'>";
 } else {
     $_SESSION['time'] = time();
