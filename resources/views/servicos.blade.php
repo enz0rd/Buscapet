@@ -51,7 +51,7 @@
                                                     </div>
                                                     <p class="item-price"><b>R$<?php echo $row['valor_servico'] ?></b></p>
                                                     <br>
-                                                    <a class="buttonClass-services" href="https://wa.me/55<?php echo $row['contato_empresa'] ?>">Contate a empresa</a>
+                                                    <a class="buttonClass-services" href="/servicos/<?php echo $row['idservico'] ?>">Ver mais</a>
                                                 </div>
                                             </div>
                                         </div>

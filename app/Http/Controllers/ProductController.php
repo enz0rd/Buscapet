@@ -11,9 +11,14 @@ class ProductController extends Controller
         $busca = request('search');
         return view('produtos', ['busca' => $busca]);
     }
-
+     
     public function add()
     {
         return view('cadastro_produto');
+    }
+   
+    public function show($id)
+    {
+        return view('produto', ['id' => $id]);
     }
 }

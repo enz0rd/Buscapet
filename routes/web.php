@@ -36,3 +36,6 @@ Route::get('/produtos/add', [ProductController::class, 'add']);
 Route::get('/empresas/add', [CompanyController::class, 'add']);
 Route::get('/servicos/add', [ServiceController::class, 'add']);
 Route::get('/categorias/add', [CategoryController::class, 'add']);
+
+Route::get('/produtos/{id?}', [ProductController::class, 'show']);
+Route::get('/servicos/{id?}', [ServiceController::class, 'show']);

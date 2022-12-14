@@ -43,7 +43,8 @@
                                                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                                         </ul>
                                                     </div>
-                                                    <p class="item-price"><b>R$<?php echo $row['valor_produto'] ?></b></p>
+                                                    <p class="item-price"><b>R$<?php echo $row['valor_produto'] ?></b></p> <br>
+                                                    <a class="buttonClass" href="/produtos/<?php echo $row['idproduto'] ?>">Ver mais</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -104,7 +105,8 @@
                                                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                                         </ul>
                                                     </div>
-                                                    <p class="item-price"><b>R$<?php echo $row['valor_servico'] ?></b></p>
+                                                    <p class="item-price"><b>R$<?php echo $row['valor_servico'] ?></b></p><br>
+                                                    <a class="buttonClass-services" href="/servicos/<?php echo $row['idservico'] ?>">Ver mais</a>
                                                 </div>
                                             </div>
                                         </div>

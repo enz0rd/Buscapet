@@ -50,9 +50,8 @@
                                                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                                         </ul>
                                                     </div>
-                                                    <p class="item-price"><b>R$<?php echo $row['valor_produto'] ?></b></p>
-                                                    <br>
-                                                    <a class="buttonClass" href="https://wa.me/55<?php echo $row['contato_empresa'] ?>">Contate a empresa</a>
+                                                    <p class="item-price"><b>R$<?php echo $row['valor_produto'] ?></b></p><br>
+                                                    <a class="buttonClass" href="/produtos/<?php echo $row['idproduto'] ?>">Ver mais</a>
                                                 </div>
                                             </div>
                                         </div>
